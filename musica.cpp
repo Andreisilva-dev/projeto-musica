@@ -47,6 +47,7 @@ void guitarraVirtual(string& musicDados){
                  << "Bom, você não é um Jimmy Page, mas continue tentando ^-^"<< "\n"
                  << "Sua música está sendo gravada, aguarde '-' " << endl;
                   system("pause");
+                  system("cls");
             return;
            
         default:
@@ -139,11 +140,12 @@ int main (){
 
     setlocale(LC_ALL, "pt_BR.UTF-8");
 	SetConsoleOutputCP(CP_UTF8);
-    system("color BD");
+    system("color 01");
 
     
     char escolha;
     do { // é pra rodar o bloco baixo várias vezes, mas ele vai testar antes 
+        system("cls");
         cout << " " << endl;
         cout << "Aoba, esse é nosso 'joguinho' musical, seja bem vindo!" << endl;
         cout << "Temos dois instrumentos diferentes pra tocar"<< endl;
@@ -194,13 +196,18 @@ int main (){
            playMusic(nameFile);
 
         }else if (escolha == '4'){
+            system("cls");
             cout << "Obrigada por tocar, não esqueça de voltar pra praticar L(^^)" << endl;
             
         }else {
             cout <<"Escolhe algo que existe cara, pfvr..."<< endl;
         
         }
+        system("cls");
     }while(escolha != '4');
+
+    cout << "Obrigado por utilizar nosso sistema musical :) :)" << endl;
+    cout << "Volte sempre meu patrão :) :)" << endl;
     system("pause");
     return 0; 
 }
