@@ -43,7 +43,8 @@ void guitarraVirtual(string& musicDados){
             musicDados += "329 350\n";
             break;
         case 'b':
-            cout << "Não quer mais tocar guitarra ?" << "\n"
+            cout << "" << '\n'
+                 << "Não quer mais tocar guitarra ?" << "\n"
                  << "Bom, você não é um Jimmy Page, mas continue tentando ^-^"<< "\n"
                  << "Sua música está sendo gravada, aguarde '-' " << endl;
                   system("pause");
@@ -63,36 +64,38 @@ void bateriaVirtual(string& musicDados){
 
             switch (notes){
         case '7':
-            playNotes(200, 400); // caixa
+            playNotes(200, 300); // caixa
             musicDados += "200 350\n"; 
             break;
         case '8':
-            playNotes(115, 400); // tom grave
+            playNotes(115, 300); // tom grave
             musicDados += "115 350\n";
             break;
         case '9':
-            playNotes(180, 400); // tom medio
+            playNotes(180, 300); // tom medio
             musicDados += "180 350\n";
             break;
         case '4':
-            playNotes(280, 400); // tom agudo
+            playNotes(280, 300); // tom agudo
             musicDados += "280 350\n";
             break;
         case '5':
-            playNotes(80, 400); // bumbo
+            playNotes(80, 300); // bumbo
             musicDados += "80 350\n";
             break;
         case '6':
-            playNotes(5000, 400); // hi-hat
+            playNotes(5000, 300); // hi-hat
             musicDados += "5000 350\n";
             break;
         case '2':
-            playNotes(5500, 400); // prato
+            playNotes(5500, 300); // prato
             musicDados += "5500 350\n";
             break;
         case '0':
             cout << "Éhhh... o Eloy Casagrande ainda é melhor, mas tudo bem °l°"<< "\n"
                 << "Estamos terminando de gravar seu som, um segundo :}" << endl;
+                system("pause");
+                system("cls");
             return;
         default:
             cout << "Bem, parece que é melhor você tentar mais tarde... ^-^'" << endl;
@@ -124,6 +127,8 @@ void playMusic(const string nameFile){
         cout <<"Abrindo o arquivo com sua música..." << endl;
     }else{
         cout << "Não conseguimos abrir o arquivo com sua música :(" << endl;
+        system("pause");
+        system("cls");  
         return;
     }
 
@@ -132,7 +137,9 @@ void playMusic(const string nameFile){
         playNotes(freq, tempo);
     }
     musicFile.close();
-    cout << "Olhaaa, que música hein, já podes ir sangrar os ouvidos das pessoas no rock in rio "<< endl;
+    cout << "Olhaaa, que música hein, já podes ir sangrar os ouvidos das pessoas no rock in rio ;)"<< endl;
+    system("pause");
+    system("cls");
     
 }
 
@@ -140,7 +147,7 @@ int main (){
 
     setlocale(LC_ALL, "pt_BR.UTF-8");
 	SetConsoleOutputCP(CP_UTF8);
-    system("color 01");
+    system("color 0D");
 
     
     char escolha;
@@ -192,22 +199,19 @@ int main (){
            cout << "Qual música você quer reproduzir?: ";
            cin >> nameMusic;
            
-           string nameFile = nameMusic + ".txt"; // provavelmente vou colocar dentro da função
+           string nameFile = nameMusic + ".txt"; 
            playMusic(nameFile);
 
         }else if (escolha == '4'){
+            cout << "Obrigada por tocar, não esqueça de praticar L(^^)" << endl;
+            cout << "Volte sempre meu patrão :) :)" << endl;
+            system("pause");
             system("cls");
-            cout << "Obrigada por tocar, não esqueça de voltar pra praticar L(^^)" << endl;
-            
         }else {
             cout <<"Escolhe algo que existe cara, pfvr..."<< endl;
         
         }
         system("cls");
     }while(escolha != '4');
-
-    cout << "Obrigado por utilizar nosso sistema musical :) :)" << endl;
-    cout << "Volte sempre meu patrão :) :)" << endl;
-    system("pause");
     return 0; 
 }
